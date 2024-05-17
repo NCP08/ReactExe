@@ -14,8 +14,11 @@ import "./App.css";
 // import MyComponnt from "./ex10_prop_required/MyComponent";
 // import MyComponent from "./ex11_prop_class/MyComponent";
 // import MyComponent from "./ex12_prop_class/MyComponent";
+// import Team from "./ex13_compose_component/Team";
+// import CommentList from "./ex18_comment/CommentList";
+// import CommentList from "./ex19_comment/CommentList";
 
-import Team from "./ex13_compose_component/Team";
+import CommentList from "./ex20_comment/CommentList";
 
 function App() {
   return (
@@ -36,7 +39,9 @@ function App() {
     //   리액트
     // </MyComponent>
 
-    <Team title="재능 기부 교류 서비스" />
+    // <Team title="재능 기부 교류 서비스" />
+
+    <CommentList />
   );
 }
 
