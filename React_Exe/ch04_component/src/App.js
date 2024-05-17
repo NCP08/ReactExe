@@ -11,8 +11,11 @@ import "./App.css";
 // import MyComponent from "./ex07_children/MyComponent";
 // import MyComponent from "./ex08_destructing/MyComponent";
 // import MyComponent from "./ex09_prop_types/MyComponent";
+// import MyComponnt from "./ex10_prop_required/MyComponent";
+// import MyComponent from "./ex11_prop_class/MyComponent";
+// import MyComponent from "./ex12_prop_class/MyComponent";
 
-import MyComponent from "./ex10_prop_required/MyComponent";
+import Team from "./ex13_compose_component/Team";
 
 function App() {
   return (
@@ -29,9 +32,11 @@ function App() {
     // <MyComponent name={3}>리액트</MyComponent>
 
     // <MyComponent name="React_Programming">리액트</MyComponent>
-    <MyComponent name="React_Programming" favoriteNumber={1}>
-      리액트
-    </MyComponent>
+    // <MyComponent name="리액트_뷰_앵귤러_노드_넥스트" favoriteNumber={3}>
+    //   리액트
+    // </MyComponent>
+
+    <Team title="재능 기부 교류 서비스" />
   );
 }
 
