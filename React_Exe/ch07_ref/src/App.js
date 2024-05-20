@@ -10,6 +10,10 @@ import ScrollBox from "./ex05_component_ref/ScrollBox";
 //   return <ValidationSample />;
 // }
 
+/* ref는 html 엘리먼트를 가리킬 때 사용하고,
+        우리가 만든 컴포넌트를 가리킬 때도 사용한다.
+ */
+
 class App extends Component {
   render() {
     return (
