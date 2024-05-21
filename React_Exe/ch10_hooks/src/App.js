@@ -10,14 +10,18 @@ import "./App.css";
 // import Info from "./ex08_useEffect/Info";
 // import ParentInfo from "./ex08_useEffect/ParentInfo";
 // import Counter from "./ex09_useReducer/Counter";
-import Info from "./ex10_useReducer/Info";
+// import Info from "./ex10_useReducer/Info";
+// import Average from "./ex11_useMemo/Average";
+// import Average from "./ex12_useMemo/Average";
+import Average from "./ex13_useCallback/Average";
 
 function App() {
   // return <Counter />;
   // return <Info />;
   // return <ParentInfo />;
   // return <Counter />;
-  return <Info />;
+  // return <Info />;
+  return <Average />;
 }
 
 export default App;
