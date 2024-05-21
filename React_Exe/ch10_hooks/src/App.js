@@ -3,11 +3,18 @@ import "./App.css";
 
 // import Counter from "./ex01_useState/Counter";
 // import Info from "./ex02_useState/Info";
-import Info from "./ex03_useEffect/Info";
+// import Info from "./ex03_useEffect/Info";
+// import Info from "./ex04_useEffect/Info";
+// import Info from "./ex05_useEffect/Info";
+// import Info from "./ex06_useEffect/Info";
+// import Info from "./ex07_useEffect/Info";
+// import Info from "./ex08_useEffect/Info";
+import ParentInfo from "./ex08_useEffect/ParentInfo";
 
 function App() {
   // return <Counter />;
-  return <Info />;
+  // return <Info />;
+  return <ParentInfo />;
 }
 
 export default App;
