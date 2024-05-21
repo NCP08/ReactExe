@@ -9,13 +9,15 @@ import "./App.css";
 // import Info from "./ex07_useEffect/Info";
 // import Info from "./ex08_useEffect/Info";
 // import ParentInfo from "./ex08_useEffect/ParentInfo";
-import Counter from "./ex09_useReducer/Counter";
+// import Counter from "./ex09_useReducer/Counter";
+import Info from "./ex10_useReducer/Info";
 
 function App() {
   // return <Counter />;
   // return <Info />;
   // return <ParentInfo />;
-  return <Counter />;
+  // return <Counter />;
+  return <Info />;
 }
 
 export default App;
