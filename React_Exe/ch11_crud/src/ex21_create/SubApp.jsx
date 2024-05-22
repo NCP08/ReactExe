@@ -80,11 +80,6 @@ export default function SubApp(){
     {id:2, title:'css', body:'css is ...'},
     {id:3, title:'javascript', body:'javascript is ...'},
   ]);
-  // const topics = [
-  //   {id:1, title:'html', body:'html is ...'},
-  //   {id:2, title:'css', body:'css is ...'},
-  //   {id:3, title:'javascript', body:'javascript is ...'},
-  // ]
 
   let content = null;
   
@@ -108,17 +103,15 @@ export default function SubApp(){
   }else if(mode === 'CREATE'){
     // <Create/>내부에서 submit이벤트가 발생하면
     // 부모에서 전달한 함수인 onCreate에 title, body를 전달하여 호출한다.
-    content = <Create onCreate={(title, body)=>{
-      //alert(`${title}-${body}`);
+    content = <Create onCreate={(_title, _body)=>{
+      // topics를 state변수로 전환했다.
+      // 그럼 topics에 새로운 항목을 저장하자.
 
-      /* 이제 topics리스트에 새로운 항목을 추가해야하는데
-        topics가 일반 지역변수이므로, 
-        다시 SubApp가 리렌더링 될 때 호출되면
-        초기화 되버리므로, 새로 추가한 것이 무효가 된다.
-        그러므로 topics를 state변수로 전환한다.
-
-        topics로 가서 useState를 사용하자~
-      */
+      // 그런데 topics에는 id도 필요하다
+      // 그러므로 새로운 id를 발급받을 state가 필요하다.
+      // nextId 스테이트를 만들자
+      
+      const newTopic = {title: _title, body: _body};
     }} />
   }
 

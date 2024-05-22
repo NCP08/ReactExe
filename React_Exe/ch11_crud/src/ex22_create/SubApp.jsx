@@ -75,16 +75,13 @@ export default function SubApp(){
 
   const [mode, setMode] = useState('WELCOME');
   const [id, setId] = useState(null);       // nav의 어떤 항목(id)이 선택되었는지
+  // 새로운 id발급, topics의 마지막 id가 3이므로, 새로운 id는 4부터 시작
+  const [nextId, setNextId] = useState(4);  
   const [topics, setTopics] = useState([
     {id:1, title:'html', body:'html is ...'},
     {id:2, title:'css', body:'css is ...'},
     {id:3, title:'javascript', body:'javascript is ...'},
   ]);
-  // const topics = [
-  //   {id:1, title:'html', body:'html is ...'},
-  //   {id:2, title:'css', body:'css is ...'},
-  //   {id:3, title:'javascript', body:'javascript is ...'},
-  // ]
 
   let content = null;
   
@@ -108,17 +105,16 @@ export default function SubApp(){
   }else if(mode === 'CREATE'){
     // <Create/>내부에서 submit이벤트가 발생하면
     // 부모에서 전달한 함수인 onCreate에 title, body를 전달하여 호출한다.
-    content = <Create onCreate={(title, body)=>{
-      //alert(`${title}-${body}`);
+    content = <Create onCreate={(_title, _body)=>{
 
-      /* 이제 topics리스트에 새로운 항목을 추가해야하는데
-        topics가 일반 지역변수이므로, 
-        다시 SubApp가 리렌더링 될 때 호출되면
-        초기화 되버리므로, 새로 추가한 것이 무효가 된다.
-        그러므로 topics를 state변수로 전환한다.
-
-        topics로 가서 useState를 사용하자~
-      */
+      // 새로운 항목을 topics에 저장
+      const newTopic = {id: nextId, title: _title, body: _body};
+      topics.push(newTopic);
+      // topics의 내용을 바뀌었지만, 할당된 참조값은 바뀌지 않아서
+      // 기존과 동일한 참조값을 가진 topic를 넣었으므로
+      // React Hook이 변화를 감지하지 못함.
+      // => 그러므로 새로운 newTopics객체를 할당해서 setTopics에 넣어야 함.
+      setTopics(topics);
     }} />
   }
 
