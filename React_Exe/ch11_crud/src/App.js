@@ -22,7 +22,8 @@ import "./App.css";
 // import SubApp from "./ex20_create/SubApp";
 // import SubApp from "./ex21_create/SubApp";
 // import SubApp from "./ex22_create/SubApp";
-import SubApp from "./ex23_create/SubApp";
+// import SubApp from "./ex23_create/SubApp";
+import SubApp from "./ex24_create/SubApp";
 
 function App() {
   return <SubApp />;
