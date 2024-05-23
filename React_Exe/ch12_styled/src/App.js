@@ -1,16 +1,35 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ReactButton from "./ex01_non_styled/ReactButton";
-import StyledButton from "./ex02_styled/StyledButton";
+// import ReactButton from "./ex01_non_styled/ReactButton";
+// import StyledButton from "./ex02_styled/StyledButton";
 // import SimpleButton from "./ex03_styled/SimpleButton";
-import SimpleButton from "./ex04_styled/SimpleButton";
-import LargeButton from "./ex05_styled/LargeButton";
+// import SimpleButton from "./ex04_styled/SimpleButton";
+// import LargeButton from "./ex05_styled/LargeButton";
 // import PrimaryButton from "./ex06_styled/PrimaryButton";
 // import PrimaryButton from "./ex07_styled/PrimaryButton";
-import PrimaryButton from "./ex08_styled/PrimaryButton";
-import SecondButton from "./ex09_styled/SecondButton";
+// import PrimaryButton from "./ex08_styled/PrimaryButton";
+// import SecondButton from "./ex09_styled/SecondButton";
 // import Blocks from "./ex10_styled/Blocks";
-import Blocks from "./ex11_styled/Blocks";
+// import Blocks from "./ex11_styled/Blocks";
+import Blocks from "./ex12_styled/Blocks";
+
+const blockItems = [
+  {
+    label: "1",
+    padding: "1rem",
+    backgroundImage: `url("https://blog.kakaocdn.net/dn/bhWZTq/btrr1MBYWuc/Ct0TpC5iAi8pOV6CkkFZeK/img.jpg")`,
+  },
+  {
+    label: "2",
+    padding: "1rem",
+    backgroundImage: `url("https://t1.daumcdn.net/cafeattach/1PzAO/7600a77a4ed18b7fa534546a257de0ca09eff4ab")`,
+  },
+  {
+    label: "3",
+    padding: "1rem",
+    backgroundImage: `url("https://blog.kakaocdn.net/dn/T5llE/btrr03jHwO8/LYZz4fzSmJcqOEQxJTjTbk/img.jpg")`,
+  },
+];
 
 function App() {
   return (
@@ -23,10 +42,12 @@ function App() {
       <PrimaryButton primary>즐겁습니다</PrimaryButton>
       <SecondButton>Happy Happy</SecondButton>
       <SecondButton primary>Congraturation!</SecondButton> */}
-      <Blocks />
+      {/* <Blocks />
       <Blocks column />
       <Blocks stretch />
-      <Blocks baseline />
+      <Blocks baseline /> */}
+
+      <Blocks blockItems={blockItems} />
     </>
   );
 }
