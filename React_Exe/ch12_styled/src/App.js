@@ -22,7 +22,37 @@ const blockItems = [
   {
     label: "2",
     padding: "1rem",
-    backgroundImage: `url("https://t1.daumcdn.net/cafeattach/1PzAO/7600a77a4ed18b7fa534546a257de0ca09eff4ab")`,
+    backgroundImage: `url("https://mblogthumb-phinf.pstatic.net/MjAxODA2MjNfMTEy/MDAxNTI5NzMxMTU4MTM3.28zEZBHsO9RhxASP2dUkXRPEBqb7V-SLm7qMZ26-tugg.Nz8144FCGE5Ll1BC1yPwNG47-bGPHjcCRzOY-40I8aMg.PNG.guswh2678/%25EC%258A%25AC%25EB%259D%25BC%25EC%259D%25B4%25EB%2593%259C6.PNG?type=w800")`,
+  },
+  {
+    label: "3",
+    padding: "1rem",
+    backgroundImage: `url("https://blog.kakaocdn.net/dn/T5llE/btrr03jHwO8/LYZz4fzSmJcqOEQxJTjTbk/img.jpg")`,
+  },
+  {
+    label: "1",
+    padding: "1rem",
+    backgroundImage: `url("https://blog.kakaocdn.net/dn/bhWZTq/btrr1MBYWuc/Ct0TpC5iAi8pOV6CkkFZeK/img.jpg")`,
+  },
+  {
+    label: "2",
+    padding: "1rem",
+    backgroundImage: `url("https://mblogthumb-phinf.pstatic.net/MjAxODA2MjNfMTEy/MDAxNTI5NzMxMTU4MTM3.28zEZBHsO9RhxASP2dUkXRPEBqb7V-SLm7qMZ26-tugg.Nz8144FCGE5Ll1BC1yPwNG47-bGPHjcCRzOY-40I8aMg.PNG.guswh2678/%25EC%258A%25AC%25EB%259D%25BC%25EC%259D%25B4%25EB%2593%259C6.PNG?type=w800")`,
+  },
+  {
+    label: "3",
+    padding: "1rem",
+    backgroundImage: `url("https://blog.kakaocdn.net/dn/T5llE/btrr03jHwO8/LYZz4fzSmJcqOEQxJTjTbk/img.jpg")`,
+  },
+  {
+    label: "1",
+    padding: "1rem",
+    backgroundImage: `url("https://blog.kakaocdn.net/dn/bhWZTq/btrr1MBYWuc/Ct0TpC5iAi8pOV6CkkFZeK/img.jpg")`,
+  },
+  {
+    label: "2",
+    padding: "1rem",
+    backgroundImage: `url("https://mblogthumb-phinf.pstatic.net/MjAxODA2MjNfMTEy/MDAxNTI5NzMxMTU4MTM3.28zEZBHsO9RhxASP2dUkXRPEBqb7V-SLm7qMZ26-tugg.Nz8144FCGE5Ll1BC1yPwNG47-bGPHjcCRzOY-40I8aMg.PNG.guswh2678/%25EC%258A%25AC%25EB%259D%25BC%25EC%259D%25B4%25EB%2593%259C6.PNG?type=w800")`,
   },
   {
     label: "3",

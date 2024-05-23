@@ -4,6 +4,7 @@ const Wrapper = styled.div`
     padding: 1rem;
     display: flex;
     flex-direction: ${props => props.column ? "column" : "row"};
+    flex-wrap: wrap;
     align-items: ${(props) => {
         if(props.baseline)
             return "baseline";
