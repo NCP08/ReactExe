@@ -1,8 +1,8 @@
 import "./App.css";
-import { useState } from "react";
-import TodoTemplate from "./ex04_TodoListItem/TodoTemplate";
-import TodoInsert from "./ex04_TodoListItem/TodoInsert";
-import TodoList from "./ex04_TodoListItem/TodoList";
+import { useState, useRef, useCallback } from "react";
+import TodoTemplate from "./ex05_TodoInsert/TodoTemplate";
+import TodoInsert from "./ex05_TodoInsert/TodoInsert";
+import TodoList from "./ex05_TodoInsert/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -23,9 +23,24 @@ function App() {
     },
   ]);
 
+  const nextId = useRef(4);
+
+  const onInsert = useCallback(
+    (text) => {
+      const todo = {
+        id: nextId.current,
+        text,
+        checked: false,
+      };
+      setTodos(todos.concat(todo));
+      nextId.current += 1;
+    },
+    [todos]
+  );
+
   return (
     <TodoTemplate>
-      <TodoInsert />
+      <TodoInsert onInsert={onInsert} />
       <TodoList todos={todos} />
     </TodoTemplate>
   );
