@@ -9,6 +9,8 @@ function Card(props){
                 padding: 8,
                 borderRadius: 8,
                 boxShadow: "0px 0px 4px grey",
+                
+                // Specilization 기법
                 backgroundColor: backgroundColor || "white",
             }}
         >
