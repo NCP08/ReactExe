@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 /*
 spring security설정을 하게 되면
@@ -34,7 +35,7 @@ Using generated security password: 6c109eeb-c5a1-4a83-b9c9-f35b03171b40
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
 
@@ -53,8 +54,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    }
 
     // 보안설정/주소 권한 허용 설정
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         super.configure(http);
+        return http.build();
     }
 }
