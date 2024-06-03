@@ -4,8 +4,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.mind.carddatabase.domain.Car;
 import org.mind.carddatabase.domain.Owner;
+import org.mind.carddatabase.domain.User;
 import org.mind.carddatabase.repository.CarRepository;
 import org.mind.carddatabase.repository.OwnerRepository;
+import org.mind.carddatabase.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +21,7 @@ public class CardDatabaseApplication implements CommandLineRunner {
 
 	private final OwnerRepository ownerRepository;
 	private final CarRepository	carRepository;
+	private final UserRepository userRepository;
 
 	public static void main(String[] args) {
 
@@ -74,5 +77,22 @@ public class CardDatabaseApplication implements CommandLineRunner {
 		for(Car car : carRepository.findAll()){
 			log.info(car.toString());
 		}
+
+		// username=user / password=user
+		User user1 = User.builder()
+						.username("user")
+						.password("$2y$10$OwyMOTgTPKQal6nFt0JWG.sOCDJq5PN.QRr8BSjrvkR7lVu2SLinW")
+						.role("USER")
+						.build();
+
+		// username=admin / password=admin
+		User user2 = User.builder()
+				.username("admin")
+				.password("$2y$10$ENs1XLeuO8xQRRUkeAuhn.idEFXHhFVZHRbSM708tVgRDFmVhVbZK")
+				.role("ADMIN")
+				.build();
+
+		userRepository.save(user1);
+		userRepository.save(user2);
 	}
 }

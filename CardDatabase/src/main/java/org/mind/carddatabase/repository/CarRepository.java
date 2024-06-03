@@ -9,10 +9,14 @@ import java.util.List;
 
 /* Rest Repository 설정에 의해
 이 CarRepository는 json Controller의 역할을 한다.
-1. 전체 조회 GET - http://localhost:12000/api/cars
-2. ID 3인 CAR 조회 GET - http://localhost:12000/api/cars/3
-3. ID 3인 CAR의 OWNER 조회 GET - http://localhost:12000/api/cars/3/owner
-4. 생성 POST -  http://localhost:12000/api/cars
+1. 전체 조회
+  GET - http://localhost:12000/api/cars
+2. ID 3인 CAR 조회
+  GET - http://localhost:12000/api/cars/3
+3. ID 3인 CAR의 OWNER 조회
+  GET - http://localhost:12000/api/cars/3/owner
+4. 생성
+  POST -  http://localhost:12000/api/cars
     Body > raw > JSON
     전송
 {
@@ -43,7 +47,8 @@ import java.util.List;
         }
     }
 }
-5. 업데이트 PATCH - http://localhost:12000/api/cars/11
+5. 업데이트
+  PATCH - http://localhost:12000/api/cars/11
     Body > raw > JSON
     전송
 {
