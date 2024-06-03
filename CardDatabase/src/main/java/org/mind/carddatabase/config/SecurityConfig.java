@@ -1,18 +1,24 @@
 package org.mind.carddatabase.config;
 
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.mind.carddatabase.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.servlet.annotation.WebFilter;
 
 /*
 spring security설정을 하게 되면
@@ -35,7 +41,7 @@ Using generated security password: 6c109eeb-c5a1-4a83-b9c9-f35b03171b40
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class SecurityConfig {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsService userDetailsService;
 
@@ -48,15 +54,24 @@ public class SecurityConfig {
     }
 
     // 인증 검사하는 객체를 Bean으로 생성
-//    @Bean
-//    public AuthenticationManager authenticationManager() throws Exception {
-//        return authenticationManager();
-//    }
+    @Bean
+    public AuthenticationManager getAuthenticationManager() throws Exception {
+        return authenticationManager();
+    }
 
     // 보안설정/주소 권한 허용 설정
-    @Bean
-    SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        super.configure(http);
-        return http.build();
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // csrf보안은 세션을 활용하는데 Rest서버는 세션을 사용하지 않으므로 disable
+        http.csrf().disable()
+                .sessionManagement()
+                // Rest 서버는 세션 상태를 유지하지 않으므로 STATELESS
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+                .authorizeRequests()
+                // /login엔드포인트에 대한 POST요청은 접근을 허용함.
+                .antMatchers(HttpMethod.POST, "/login").permitAll()
+                // 다른 요청은 인증 과정을 거쳐야 접근할 수 있다.
+                .anyRequest().authenticated();
     }
+
 }
